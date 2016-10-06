@@ -15,23 +15,28 @@ describe("TodoMVC - React", function(){
   })
 
   context("When page is initially opened", function(){
+    // New commands used here:
+    // https://on.cypress.io/api/focused
+    // https://on.cypress.io/api/should
+    //
+    // New concepts introduced:
+    // https://on.cypress.io/guides/making-assertions
+
     it("should focus on the todo input field", function(){
-      // get the currently focused element and assert
-      // that it has class: "new-todo"
-      //
-      // New commands used here:
-      // https://on.cypress.io/api/focused
-      // https://on.cypress.io/api/should
-      //
-      // New concepts introduced:
-      // https://on.cypress.io/guides/making-assertions
+      // HINT:
+      // 1. get the currently focused element
+      // 2. assert that it has class: "new-todo"
     })
   })
 
   context("No Todos", function(){
+    // New commands used here:
+    // https://on.cypress.io/api/get
+
     it("should hide .main and .footer", function(){
-      // New commands used here:
-      // https://on.cypress.io/api/get
+      // HINT:
+      // 1. use jquery's class selector to target the element
+      // 2. assert that the element should not exist
     })
   })
 
@@ -41,31 +46,37 @@ describe("TodoMVC - React", function(){
     // - cy.eq       https://on.cypress.io/api/eq
     // - cy.find     https://on.cypress.io/api/find
     // - cy.contains https://on.cypress.io/api/contains
-    // - cy.as       https://on.cypress.io/api/as
 
     it("should allow me to add todo items", function(){
-
+      // HINT:
+      // 1. target the element: .new-todo
+      // 2. type the first todo and hit {enter}
+      // 3. query to ensure it exists in the list of todos
+      // 4. then add another todo and repeat the process
     })
 
     it("should clear text input field when an item is added", function(){
-
-    })
-
-    it("should append new items to the bottom of the list", function(){
-
+      // HINT:
+      // 1. create a new todo
+      // 2. assert that the .new-todo input element has a blank value
     })
 
     it("should trim text input", function(){
-
+      // HINT:
+      // 1. create a new todo with whitespace on both sides of it
+      // 2. assert that the created todo does not have whitespace
     })
 
     it("should show .main and .footer when items added", function(){
-
+      // HINT:
+      // 1. create a new todo
+      // 2. assert that both .main and .footer should be visible
     })
   })
 
   context("Mark all as completed", function(){
     // New commands used here:
+    // - cy.as       https://on.cypress.io/api/as
     // - cy.check    https://on.cypress.io/api/check
     // - cy.uncheck  https://on.cypress.io/api/uncheck
 
