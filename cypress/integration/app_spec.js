@@ -32,7 +32,7 @@ describe("TodoMVC - React", function(){
     // TodoMVC App we want to test against
     //
     // https://on.cypress.io/api/visit
-    cy.visit("http://localhost:8888")
+    cy.visit("http://localhost:8888").screenshot("foo-" + Math.random())
   })
 
   context("When page is initially opened", function(){
@@ -60,7 +60,7 @@ describe("TodoMVC - React", function(){
     })
   })
 
-  context("New Todo", function(){
+  context.only("New Todo", function(){
     // New commands used here:
     // - cy.type     https://on.cypress.io/api/type
     // - cy.eq       https://on.cypress.io/api/eq
@@ -91,9 +91,11 @@ describe("TodoMVC - React", function(){
     it("should clear text input field when an item is added", function(){
       cy
         .get(".new-todo")
-        .type(TODO_ITEM_ONE)
-        .type("{enter}")
+        .type("demo{enter}")
         .should("have.value", "")
+        .then(function(){
+          throw new Error("omg faillllz")
+        })
     })
 
     it("should append new items to the bottom of the list", function(){
