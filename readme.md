@@ -44,6 +44,9 @@ cd cypress-example-todomvc
 ## install the node_modules
 npm install
 
+## install http-server (needed to start local webserver)
+npm install -g http-server
+
 ## start the local webserver
 npm start
 ```
